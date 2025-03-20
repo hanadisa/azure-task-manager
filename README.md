@@ -18,7 +18,7 @@ The goal was to **package, build, and deploy** the application while implementin
 
 ---
 
-## 📖 Directory Structure  
+## 🗂️ Directory Structure  
 ```sh
 azure-task-manager/
 │── app/                     # Application source code & Dockerfile
