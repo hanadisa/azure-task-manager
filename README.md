@@ -1,82 +1,41 @@
-<<<<<<< HEAD
-# azure-task-manager
-=======
-<div align="center">
-    <img src="./app/static/images/coderco_logo.jpeg" alt="CoderCo" width="300"/>
-</div>
+# Azure Task Manager: Cloud-Native Deployment 🚀
 
-# Project: CoderCo Assignment 1 - Open Source App Hosted on Azure with Terraform 🚀
+## 📌 Overview
+This project showcases the **deployment of a containerized Task Manager application** on **Microsoft Azure**, following DevOps best practices. It mirrors an **AWS ECS-based setup** but leverages **Azure Container Apps** for hosting and **Terraform for infrastructure provisioning**.  
 
-## Overview
+The goal was to **package, build, and deploy** the application while implementing **CI/CD, security, and scalability**.  
 
-This project mirrors the AWS ECS-based setup, but we will now deploy the open-source app on Azure using Azure Container Apps. 
+**This README provides an overview of the deployment process, highlighting key decisions, trade-offs, and implementation details.** 
 
-The goal is to package, build, and deploy an application using Terraform and CI/CD pipelines, ensuring best practices in infrastructure as code, security, and scalability.
+---
 
-Key Components:
-- Azure Container Registry (ACR) for container images.
-- Azure Container Apps (or AKS) to run containers.
-- Azure Application Gateway or Front Door for HTTPS routing.
-- GitHub Actions or Azure DevOps for CI/CD (your choice).
+## 🔑 Key Features  
+- **Containerized App Deployment** using **Azure Container Apps**  
+- **Infrastructure as Code (IaC)** with **Terraform**  
+- **Container Image Management** using **Azure Container Registry (ACR)**  
+- **CI/CD Automation** with **GitHub Actions**  
+- **Secure HTTPS Routing** using **Azure Front Door / Application Gateway**  
 
-## Task/Assignment 📝
+---
 
-- Create a repository for your work.
-- Containerize the app and push it to Azure Container Registry (ACR).
-- Use a CI/CD pipeline (GitHub Actions, Azure DevOps, or another) to build, test, and push the container image.
-- Deploy the app on Azure using Terraform:
-  - Azure Container Apps
-- Expose the application via HTTPS using Azure Application Gateway or Azure Front Door.
-- Ensure the app is available at:
-  - https://tm.<your-domain>.co.uk or
-  - https://tm.labs.<your-domain>.co.uk
-- Add screenshots of the live app to the README.md.
-- Include an architecture diagram of your infrastructure (Lucidchart, draw.io, or Mermaid).
-
-## Guidance & Hints 📚
-
-### Directory Structure
-
-- `terraform/` - Terraform configuration for Azure resources. Use modules for reusable components.
-- `app/` -  App code and Dockerfile.
-- `.github/workflows/` - CI/CD pipeline configuration (GitHub Actions). Or any other CI/CD tool you want to use.
-- `docs/` - Documentation for the project. Diagrams/Architectures.
-- `README.md` - Project documentation.
-
-### Local app 💻
-
-```bash
-cd app
-
-### create a virtual environment
-python3 -m venv .venv
-
-source .venv/bin/activate
-pip3 install -r requirements.txt
-### run the app
-python3 app.py ## python3 app.py
+## 📖 Directory Structure  
+```sh
+azure-task-manager/
+│── app/                     # Application source code & Dockerfile
+│── terraform/                # Terraform configuration for infrastructure
+│── .github/workflows/        # CI/CD pipeline setup
+│── docs/                     # Documentation & architecture diagrams
+│── README.md                 # Project documentation
 ```
 
-### API
+## 🛠 Prerequisites  
+Before deploying the **Azure Task Manager**, ensure you have the following installed and configured:
 
-```bash
-# Create task
-curl -X POST -H "Content-Type: application/json" -d '{"title":"New Task"}' http://localhost:3000/tasks
-
-# List tasks
-curl http://localhost:3000/tasks
-
-# Update task
-curl -X PUT -H "Content-Type: application/json" -d '{"completed":true}' http://localhost:3000/tasks/1
-
-# Delete task
-curl -X DELETE http://localhost:3000/tasks/1
-```
-
-## Screenshots
-
-Add screenshots of your deployed application here. For example:
-
-- Home Page
-- Task Manager in Action
->>>>>>> eef776e (Initial Commit - Azure Task Manager setup)
+### ✅ Required Tools  
+- **Azure CLI** – Install from [Microsoft Docs](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)  
+- **Terraform (latest stable version)** – Install from [Terraform Docs](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)  
+- **Docker** – Required for containerizing the application  
+- **GitHub Actions or Azure DevOps** – For CI/CD pipeline automation  
+- **Azure Subscription** – Must have **Contributor** or **Owner** permissions  
+- **Azure Container Registry (ACR)** – To store and manage container images  
+- **Azure Container Apps** – Ensure it's available in your region  
